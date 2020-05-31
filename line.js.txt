@@ -1,0 +1,65 @@
+if(document.getElementById('c')){
+let canvas = document.getElementById('c'),
+		context = canvas.getContext('2d'),
+		width = canvas.width = 500,
+		height = canvas.height = 375;
+//context.scale(1, -1);
+
+let xGrid=10;
+let yGrid=10;
+let data= {
+	over5: 40,
+	over10: 75,
+	over15: 140
+}
+
+const entries= Object.entries(data);
+context.fillStyle = '#f6f6f6';
+function drawGrids(){
+	context.beginPath();
+	while(xGrid<height){
+		context.moveTo(0,xGrid);
+		context.lineTo(width,xGrid);
+		xGrid+=10;
+	}
+	while(yGrid<width){
+		context.moveTo(yGrid,0);
+		context.lineTo(yGrid,height);
+		yGrid+=10;
+	}
+	context.strokeStyle="gray";
+	context.stroke();
+}
+function blocks(count)
+{
+		return count*10;
+}
+
+function drawAxis(){
+	let yPlot=30;
+	let pop=0;
+	context.beginPath();
+	context.strokeStyle="black";
+	context.moveTo(blocks(5),blocks(5));
+	context.lineTo(blocks(5),blocks(30));
+	//context.stroke();
+	context.moveTo(blocks(5),blocks(30));
+	context.lineTo(blocks(40),blocks(30));
+	//context.stroke();
+	context.moveTo(blocks(5),blocks(30));
+	context.stroke();
+}
+drawGrids();
+drawAxis();
+		context.beginPath();
+		context.moveTo(blocks(5),blocks(30));
+		context.lineTo(blocks(10),blocks(30-4));
+		context.stroke();
+		context.moveTo(blocks(10),blocks(30-4));
+		context.lineTo(blocks(15),blocks(30-10));
+		context.stroke();
+		context.moveTo(blocks(15),blocks(30-10));
+		context.lineTo(blocks(20),blocks(30-17));
+		context.stroke();
+		
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head><title>Assignment-3</title></head>
+<body>
+<h1>Awesome Online Videos</h1><img src="https://static.rfstat.com/media/Screens_2016/Logo_animation/Quick-Logo-Animation/47ebc46e-adf3-4936-af9e-ad042a62b797.jpg">
+<hr>
+<video width="320" height="240" id="video" name="video" controls>
+  <source src="E:\Usher-DJ-Got-Us-Fallin-In-Love-ft.-Pitbull.1080p.mp4" type="video/mp4">
+</video><br>
+<button onclick="onPlay()">Play</button><button onclick="onPause()" style="display:inline-block;margin:5px;">Pause</button>
+</body>
+<script>
+var p= document.getElementById('video');
+function onPlay(){
+p.play();
+}
+function onPause(){
+p.pause();
+}
+</script>
+</html>
